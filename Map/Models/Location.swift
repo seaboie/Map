@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-struct Location: Identifiable {
+struct Location: Identifiable, Equatable {
     
     var id: String {
         name + cityName
@@ -20,5 +20,10 @@ struct Location: Identifiable {
     let description: String
     let imageNames: [String]
     let link: String
+    
+    // Equatable
+    static func == (lhs: Location, rhs: Location) -> Bool {
+        return lhs.id == rhs.id
+    }
     
 }
