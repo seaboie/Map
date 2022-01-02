@@ -25,6 +25,20 @@ struct LocationsView: View {
                     .padding()
                 
                 Spacer()
+                
+                ZStack {
+                    
+                    ForEach(vm.locations) { location in
+                        if vm.mapLocation == location {
+                            LocationPreviewView(location: location)
+                                .shadow(color: Color.black.opacity(0.6), radius: 5)
+                                // Animation Transition
+                                .transition(AnyTransition.asymmetric(insertion: vm.isSlideFromLeadingToTrailing ? .move(edge: .leading) : .move(edge: .trailing), removal: vm.isSlideFromLeadingToTrailing ? .move(edge: .trailing) : .move(edge: .leading)))
+                        }
+                    }
+                }
+                
+                
             }
         }
     }
@@ -38,6 +52,7 @@ extension LocationsView {
             
             Button {
                 vm.toggleLocationList()
+                vm.isMenuButton = true
             } label: {
                 
                 Text(vm.mapLocation.name + ", " + vm.mapLocation.cityName)

@@ -23,6 +23,10 @@ class LocationsViewModel: ObservableObject {
     // Show list of Location
     @Published var isShowLocationList: Bool = false
     
+    @Published var isMenuButton: Bool = false
+    
+    @Published var isSlideFromLeadingToTrailing: Bool = false
+    
     let mapSpan = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
     
     init() {
@@ -49,10 +53,62 @@ class LocationsViewModel: ObservableObject {
     
     func showNextLocation(location: Location) {
         
+        guard let currentIndex = locations.firstIndex(where: { $0 == mapLocation }) else { return }
+        
+        guard let newLocationIndex = locations.firstIndex(where: { $0 == location }) else { return }
+        
+        if isMenuButton {
+            if currentIndex < newLocationIndex {
+                isSlideFromLeadingToTrailing = false
+            }else{
+                isSlideFromLeadingToTrailing = true
+            }
+        }
+
         withAnimation(.easeInOut) {
             mapLocation = location
             isShowLocationList = false
         }
+    }
+    
+    func nextButtonPressed() {
+            
+        guard let currentIndex = locations.firstIndex(where: { $0 == mapLocation }) else { return }
+        
+        let nextIndex = currentIndex + 1
+        
+        guard locations.indices.contains(nextIndex) else {
+            
+            guard let firstLocation = locations.first else { return }
+            
+            showNextLocation(location: firstLocation)
+            return
+        }
+        
+        let nextLocation = locations[nextIndex]
+        showNextLocation(location: nextLocation)
+        
+        
+    }
+    
+    func backButtonPressed() {
+        
+        guard let currentIndex = locations.firstIndex(where: { $0 == mapLocation }) else { return }
+        
+        let backIndex = currentIndex - 1
+        
+        guard locations.indices.contains(backIndex) else {
+            
+            guard let lastLocation = locations.last else { return }
+            
+            showNextLocation(location: lastLocation)
+            return
+        }
+        
+        let backLocation = locations[backIndex]
+        showNextLocation(location: backLocation)
+        
+        
     }
     
     
