@@ -27,7 +27,7 @@ class LocationsViewModel: ObservableObject {
     
     @Published var isSlideFromLeadingToTrailing: Bool = false
     
-    let mapSpan = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
+    let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     
     init() {
         let locations = LocationsDataService.locations

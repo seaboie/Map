@@ -17,6 +17,7 @@
 		48C168A327804DF500373EAF /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C168A227804DF500373EAF /* LocationsViewModel.swift */; };
 		48C168A5278086D800373EAF /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C168A4278086D800373EAF /* LocationsListView.swift */; };
 		48C168A72781611500373EAF /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C168A62781611400373EAF /* LocationPreviewView.swift */; };
+		48C168A92782B49700373EAF /* LocationMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C168A82782B49500373EAF /* LocationMapAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		48C168A227804DF500373EAF /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationsViewModel.swift; path = Map/LocationsViewModel.swift; sourceTree = SOURCE_ROOT; };
 		48C168A4278086D800373EAF /* LocationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationsListView.swift; path = Map/LocationsListView.swift; sourceTree = SOURCE_ROOT; };
 		48C168A62781611400373EAF /* LocationPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationPreviewView.swift; path = Map/LocationPreviewView.swift; sourceTree = SOURCE_ROOT; };
+		48C168A82782B49500373EAF /* LocationMapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationMapAnnotationView.swift; path = Map/LocationMapAnnotationView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				48C168A02780449800373EAF /* LocationsView.swift */,
 				48C168A4278086D800373EAF /* LocationsListView.swift */,
 				48C168A62781611400373EAF /* LocationPreviewView.swift */,
+				48C168A82782B49500373EAF /* LocationMapAnnotationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48C1689B277F31BE00373EAF /* LocationsDataService.swift in Sources */,
+				48C168A92782B49700373EAF /* LocationMapAnnotationView.swift in Sources */,
 				48C168A5278086D800373EAF /* LocationsListView.swift in Sources */,
 				48C168A72781611500373EAF /* LocationPreviewView.swift in Sources */,
 				48C168A327804DF500373EAF /* LocationsViewModel.swift in Sources */,
