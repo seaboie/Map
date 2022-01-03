@@ -20,6 +20,8 @@ class LocationsViewModel: ObservableObject {
     
     @Published var mapRegion: MKCoordinateRegion = MKCoordinateRegion()
     
+    @Published var sheetLocation: Location? = nil
+    
     // Show list of Location
     @Published var isShowLocationList: Bool = false
     
