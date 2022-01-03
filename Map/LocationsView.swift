@@ -12,6 +12,8 @@ struct LocationsView: View {
     
     @EnvironmentObject private var vm: LocationsViewModel
     
+    let maxWidthForIpad: CGFloat = 700
+    
     var body: some View {
         
         ZStack {
@@ -23,6 +25,7 @@ struct LocationsView: View {
                 
                 header
                     .padding()
+                    .frame(maxWidth: maxWidthForIpad)
                 
                 Spacer()
                 
@@ -100,6 +103,8 @@ extension LocationsView {
                 if vm.mapLocation == location {
                     LocationPreviewView(location: location)
                         .shadow(color: Color.black.opacity(0.6), radius: 5)
+                        .frame(maxWidth: maxWidthForIpad)
+                        .frame(maxWidth: .infinity)
                         // Animation Transition
                         .transition(AnyTransition.asymmetric(insertion: vm.isSlideFromLeadingToTrailing ? .move(edge: .leading) : .move(edge: .trailing), removal: vm.isSlideFromLeadingToTrailing ? .move(edge: .trailing) : .move(edge: .leading)))
                 }
